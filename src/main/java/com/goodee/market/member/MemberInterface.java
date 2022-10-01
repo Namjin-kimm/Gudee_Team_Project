@@ -8,6 +8,9 @@ public interface MemberInterface {
 	//회원가입
 	public int setJoin(MemberDTO memberDTO)throws Exception;
 	
+	//회원가입 시 멤버 등급 인서트
+	public int setMemberRoles(MemberDTO memberDTO)throws Exception;
+	
 	//프로필 이미지 추가
 	public int setAddFile(MemberFileDTO memberFileDTO)throws Exception;
 	

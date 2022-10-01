@@ -11,21 +11,31 @@ public class MemberDAO implements MemberInterface{
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "com.goodee.market.member.MemberDAO.";
 
+	//로그인
 	@Override
 	public MemberDTO getLogin(MemberDTO memberDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE + "getLogin", memberDTO);
 	}
-
+	
+	//회원가입
 	@Override
 	public int setJoin(MemberDTO memberDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE + "setJoin", memberDTO);
 	}
+	
+	//회원가입 시 멤버 등급 인서트
+	@Override
+	public int setMemberRoles(MemberDTO memberDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE + "setMemberRoles", memberDTO);
+	}
+	
 
 	//멤버 정보 불러오기
 	@Override
 	public MemberDTO getMemberDetail(MemberDTO memberDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE + "getMemberDetail", memberDTO);
 	}
+
 
 	//회원 정보 수정
 	@Override

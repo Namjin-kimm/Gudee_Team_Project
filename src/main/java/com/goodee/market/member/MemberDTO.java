@@ -27,6 +27,7 @@ public class MemberDTO {
 	private MemberFileDTO memberFileDTO;
 	private List<MeetingLikeDTO> meetingLikeDTOs;
 	private List<MeetingBoardDTO> meetingBoardDTOs;
+	private List<RoleDTO> roleDTOs;
 	
 	public Long getMemberNum() {
 		return memberNum;
@@ -125,7 +126,11 @@ public class MemberDTO {
 	public void setMeetingBoardDTOs(List<MeetingBoardDTO> meetingBoardDTOs) {
 		this.meetingBoardDTOs = meetingBoardDTOs;
 	}
-	
-	
+	public List<RoleDTO> getRoleDTOs() {
+		return roleDTOs;
+	}
+	public void setRoleDTOs(List<RoleDTO> roleDTOs) {
+		this.roleDTOs = roleDTOs;
+	}
 	
 }

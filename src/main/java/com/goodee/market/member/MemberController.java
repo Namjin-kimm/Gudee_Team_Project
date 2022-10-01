@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.goodee.market.meetingboard.MeetingBoardDTO;
 import com.goodee.market.meetingboard.comment.MeetingBoardCommentDTO;
 import com.goodee.market.meetingboard.comment.MeetingBoardCommentService;
 
@@ -38,6 +39,11 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView();
 		memberDTO = memberService.getLogin(memberDTO);
 		session.setAttribute("member", memberDTO);
+		//System.out.println(session.getAttribute("member"));
+		
+		for(int i = 0; i < memberDTO.getRoleDTOs().size();i++) {
+			System.out.println(memberDTO.getRoleDTOs().get(i).getRoleNum());
+		}
 		
 		String message = "로그인 실패";
 		String url = "login";
@@ -67,7 +73,8 @@ public class MemberController {
 	@PostMapping("join")
 	public ModelAndView join(MemberDTO memberDTO, HttpSession session, MultipartFile [] files)throws Exception{
 		ModelAndView mv = new ModelAndView();		
-		int result = memberService.setJoin(memberDTO, files, session.getServletContext() );
+		memberService.setJoin(memberDTO, files, session.getServletContext());
+		memberService.setMemberRoles(memberDTO);
 		mv.setViewName("redirect: login");
 		return mv;
 		
@@ -135,6 +142,15 @@ public class MemberController {
 		System.out.println("MemberController 실행");
 		int jasonResult = memberService.setFileDelete(memberFileDTO, session.getServletContext());
 		return jasonResult;
+	}
+	
+	@GetMapping("report")
+	public ModelAndView setReport(HttpSession session, Long num)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		MemberReportDTO memberReportDTO = new MemberReportDTO();
+		memberReportDTO.setReportedMemberNum(num);
+		mv.setViewName("/member/report");
+		return mv;
 	}
 	
 

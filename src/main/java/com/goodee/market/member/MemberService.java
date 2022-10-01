@@ -1,7 +1,5 @@
 package com.goodee.market.member;
 
-import java.io.File;
-
 import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +44,11 @@ public class MemberService {
 		return result;
 	}
 	
+	//회원가입 시 멤버 등급 인서트
+	public int setMemberRoles(MemberDTO memberDTO)throws Exception{
+		return memberDAO.setMemberRoles(memberDTO);
+	}
+	
 	//회원정보 수정시 정보 불러오기
 	public MemberDTO getMemberDetail(MemberDTO memberDTO)throws Exception{
 		return memberDAO.getMemberDetail(memberDTO);
@@ -84,6 +87,7 @@ public class MemberService {
 		return result;
 	}
 	
+	//찜목록 불러오기
 	public MemberDTO getMLList(MemberDTO memberDTO)throws Exception{
 		memberDTO = memberDAO.getMLList(memberDTO);
 		return memberDTO;

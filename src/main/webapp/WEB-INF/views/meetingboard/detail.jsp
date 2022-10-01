@@ -156,6 +156,13 @@
 		</c:if>
 	</c:if>
 	
+	<form action="/member/report">
+		<div>
+			<button class="btn btn-danger">신고하기</button>
+			<input type="hidden" name="num" value="${meetingBoardDetail.meetingBoardWriter}">
+		</div>
+	</form>
+	
 	<script type="text/javascript">
 		$("#commentContents").summernote();
 	</script>

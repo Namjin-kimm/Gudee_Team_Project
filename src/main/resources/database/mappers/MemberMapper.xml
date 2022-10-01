@@ -6,9 +6,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.goodee.market.member.MemberDAO">
 
 	<!-- 로그인 -->
-	<select id="getLogin" parameterType="MemberDTO" resultType="MemberDTO">
-		SELECT ID, NAME, NICKNAME, MEMBERNUM, EMAIL, PHONE, BIRTHDAY, CASH, MAIN_ADDRESS, DETAIL_ADDRESS, POSTCODE FROM MEMBER WHERE ID = #{id} AND PASSWORD = #{password}
+	<select id="getLogin" parameterType="MemberDTO" resultMap="getLoginResult">
+		SELECT M.MEMBERNUM, M.ID, M.NICKNAME, M.NAME, M.EMAIL, M.PHONE, M.MAIN_ADDRESS,
+		M.DETAIL_ADDRESS, M.POSTCODE, M.BIRTHDAY, M.CASH, R.* FROM
+		MEMBER M
+		INNER JOIN
+		MEMBER_ROLES MR
+		ON M.MEMBERNUM = MR.MEMBERNUM 
+		INNER JOIN
+		ROLES R
+		ON MR.ROLENUM = R.ROLENUM
+		WHERE M.ID = #{id} AND M.PASSWORD = #{password}
 	</select>
+	
+	<resultMap type="MemberDTO" id="getLoginResult">
+		<id column="MEMBERNUM" property="memberNum"/>
+		<result column="ID" property="id"/>
+		<result column="NAME" property="name"/>
+		<result column="NICKNAME" property="nickname"/>
+		<result column="EMAIL" property="email"/>
+		<result column="PHONE" property="phone"/>
+		<result column="MAIN_ADDRESS" property="main_address"/>
+		<result column="DETAIL_ADDRESS" property="detail_address"/>
+		<result column="POSTCODE" property="postcode"/>
+		<result column="BIRTHDAY" property="birthday"/>
+		<result column="CASH" property="cash"/>
+		<collection property="roleDTOs" javaType="List" ofType="RoleDTO">
+			<id column="ROLENUM" property="roleNum"/>
+			<result column="ROLENAME" property="roleName"/>
+		</collection>
+	</resultMap>
 	
 	<!-- 회원가입 -->
 	<insert id="setJoin" parameterType="MemberDTO">
@@ -18,6 +45,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       </selectKey>
 		INSERT INTO MEMBER(MEMBERNUM, ID, PASSWORD, NAME, NICKNAME, EMAIL, PHONE, JOINDATE, CASH, BIRTHDAY, MAIN_ADDRESS, DETAIL_ADDRESS, POSTCODE)
 		VALUES(#{memberNum}, #{id}, #{password}, #{name}, #{nickname}, #{email}, #{phone}, SYSDATE, 0, #{birthday}, #{main_address}, #{detail_address}, #{postcode})
+	</insert>
+	
+	<insert id="setMemberRoles">
+		INSERT INTO MEMBER_ROLES (ROLENUM, MEMBERNUM)
+		VALUES (2, #{memberNum})
 	</insert>
 	
 	<!-- 파일추가 -->
@@ -104,9 +136,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</collection>
 	</resultMap>
 	
-	<select id="getComment" parameterType="meetingBoardCommentDTO" resultType="meetingBoardCommentDTO">
-		
-	</select>
+	<insert id="setReport">
+		INSERT INTO MEMBERREPORT (REPORTMEMBERNUM, REPORTEDMEMBERNUM, REPORTCONTENT)
+		VALUES (#{reportMemberNum}, #{reportedMemberNum}, #{reportContent})
+	</insert>
 	
 	
 
