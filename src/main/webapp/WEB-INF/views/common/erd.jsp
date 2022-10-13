@@ -22,7 +22,7 @@
     
   	<link rel="stylesheet" href="/resources/css/trade/header.css" />
     <link rel="stylesheet" href="/resources/css/trade/footer.css" />
-    <link rel="stylesheet" href="/resources/css/trade/common.css" />
+    <link rel="stylesheet" href="/resources/css/common.css" />
 
 </head>
 
@@ -31,42 +31,48 @@
 <body>
 
 <div class="erdBody">
-	<div class="erdTop">
+	<section class="erdTop">
 		<div class="erdContainer">
-			<div class="logo">
-				<img alt="" src="/resources/images/logo.png">
-			</div>
-			
-			<!-- 전체 ERD -->
-			<div class="erdCommon">
-				<h6>f</h6>
-				<img alt="" src="/resources/images/Goodee_Market_Project.png">
-			</div>
-	
-	
-			<!-- TRADE ERD -->
-			<div class="trade-main">
-				<div class="erdTrade">
+			<div class="erdRow">
+				<div class="erdlogo">
+					<img alt="" src="/resources/images/logo.png" class="erdlogoimg">
+				</div>
+				
+				<div class="erdair"></div>
+				<!-- 전체 ERD -->
+				<div class="erd-row-con">
+					<h5 class="erdtitle">구디 마켓 │ 전체 ERD</h5>
+					<img alt="" src="/resources/images/Goodee_Market_Project.png" class="erd-img">
+				</div>
+		
+
+				<div class="erdair"></div>
+				<!-- TRADE ERD -->
+				<div class="erd-row-con">
+					<div class="erdcon">
+						<h5 class="erdtitle">구디 마켓 │ 중고거래📦 ERD</h5>
+						<img alt="" src="/resources/images/Goodee_Market_Project_trade.png" class="erd-img">
+					</div>
 					
-					<img alt="" src="/resources/images/Goodee_Market_Project.png">
+					<div class="erd-tec">
+					</div>
 				</div>
 				
-				<div class="erd-tec">
-				</div>
-			</div>
-			
-			
-			<!-- Meeting ERD -->
-			<div class="meeting-main">
-				<div class="erdMeeting">
-					<img alt="" src="/resources/images/Goodee_Market_Project.png">
-				</div>
 				
-				<div class="erd-tec">
+				<div class="erdair"></div>
+				<!-- Meeting ERD -->
+				<div class="erd-row-con">
+					<div class="erdcon">
+						<h5 class="erdtitle">구디 마켓 │ 모임👥 ERD</h5>
+						<img alt="" src="/resources/images/Goodee_Market_Project_meeting.png" class="erd-img">
+					</div>
+					
+					<div class="erd-tec">
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </div>		
 			
 

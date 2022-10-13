@@ -14,6 +14,14 @@ public class Pager {
 		private boolean pre;
 		private boolean next;
 		
+		//검색어
+		private String search;
+		
+		private String select;
+
+		//정렬
+		private String filter;
+		
 		
 		public Pager() {
 			this.perPage=6L;
@@ -142,6 +150,31 @@ public class Pager {
 
 		public void setNext(boolean next) {
 			this.next = next;
+		}
+
+		public String getSearch() {
+			return search;
+		}
+
+		public void setSearch(String search) {
+			this.search = search;
+		}
+
+		public String getFilter() {
+			return filter;
+		}
+
+		public void setFilter(String filter) {
+			this.filter = filter;
+		}
+		
+
+		public String getSelect() {
+			return select;
+		}
+
+		public void setSelect(String select) {
+			this.select = select;
 		}
 	
 }

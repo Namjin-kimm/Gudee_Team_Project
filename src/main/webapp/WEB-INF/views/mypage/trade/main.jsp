@@ -103,11 +103,11 @@
 								            <td>
 								                ${sellItem.itemPrice}
 								            </td>
-								            <td>
-								                ${sellItem.itemHit}
+								            <td class="mp-etctext">
+						                    	<a href="#" class="mp-etc">수정하기</a>
 								            </td>
-								            <td>
-								                ${sellItem.itemStatus}
+					                        <td class="mp-etctext">
+						                    	<a href="#" class="mp-etc">삭제하기</a>
 								            </td>
 								        </tr>  
 							        	</c:forEach>
@@ -144,7 +144,7 @@
 								                ${buyItem.itemPrice}
 				                            </td>
 											<td>
-							                    ${buyItem.memberNum}
+							                    ${buyItem.nickName}
 				                            </td>
 							                <td class="mp-etctext">
 						 	                   <a href="#" class="mp-etc">리뷰작성</a>
@@ -169,7 +169,7 @@
 				                        <tr>
 						                    <th class="mp-title">제목</th>
 						                    <th class="mp-title">별점</th>
-			                                <th class="mp-title">조회수</th>			                                    
+			                                <th></th>			                                    
 											<th></th>
 						                </tr>
 						            </thead>
@@ -181,13 +181,19 @@
 								                    <h6><a href="../trade/detail?num=${review.reviewNum}" class="mp-imgtext">${reviewItem.reviewTitle}</a></h6>
 					                            </td>
 				                                <td>
-								                    ${reviewItem.reviewStar}
+				                                    <c:choose>
+										                <c:when test="${reviewItem.reviewStar eq 1}">⭐</c:when>
+										                <c:when test="${reviewItem.reviewStar eq 2}">⭐⭐</c:when>
+										                <c:when test="${reviewItem.reviewStar eq 3}">⭐⭐⭐</c:when>
+										                <c:when test="${reviewItem.reviewStar eq 4}">⭐⭐⭐⭐</c:when>
+										                <c:otherwise>⭐⭐⭐⭐⭐</c:otherwise>
+									                </c:choose>
 								                </td>
-					                            <td>
-					                                ${reviewItem.reviewHit}
+								                <td class="mp-etctext">
+						                            <a href="#" class="mp-etc">수정하기</a>
 								                </td>
 					                            <td class="mp-etctext">
-						                            <a href="#" class="mp-etc">수정하기</a>
+						                            <a href="#" class="mp-etc">삭제하기</a>
 								                </td>
 						                    </tr>  
 							            </c:forEach>

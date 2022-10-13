@@ -25,11 +25,17 @@
 		<div class="modal-dialog modal-xl">
 			<div class="modal-content">
 				<div class="modal-header">
+					<h6 class="modal-search">검색어를 입력하세요.</h6>
 				  	<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
 				
 				<div class="modal-body">
+					<select name="select" class="form-select" id="select">
+				      <option selected class="select" id="title" value="title">제목</option>
+				      <option class="select" id="contents" value="contents">내용</option> 
+				    </select>
 					<input type="text" name="search" class="form-control" id="search">
+					<button class="btn btn-outline-secondary" type="submit" id="button-addon2">검색</button>
 				</div>
 			</div>
 		</div>
