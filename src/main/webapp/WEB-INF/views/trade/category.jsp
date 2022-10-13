@@ -111,7 +111,7 @@
                             <div class="product-item">
                                 <div class="featured-item-pic">
                                 	<c:forEach items="${item.itemImageDTOs}" var="fileDTO">
-                                		<img alt="" src="../resources/upload/trade/${fileDTO.fileName}">
+                                		<img alt="" src="../resources/upload/item/${fileDTO.fileName}">
                                 	</c:forEach>
                                 </div>
 
