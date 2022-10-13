@@ -12,6 +12,8 @@
 	<c:import url="/template/meeting/header.jsp"></c:import>
 
 <body>
+	<c:import url="./template/member/memberHeader.jsp"></c:import>
+
 	<section id="home-main-section-top">
 		<div id="home-main-top">
 			<div id="home-main-desc">

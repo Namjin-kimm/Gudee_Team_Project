@@ -26,6 +26,8 @@
 	<!-- Interceptor 객체 생성 -->
 	<beans:bean class="com.goodee.market.Interceptor.MemberCheckInterceptor" id="MemberCheckInterceptor"></beans:bean>
 	<beans:bean class="com.goodee.market.Interceptor.AdminCheckInterceptor" id="AdminCheckInterceptor"></beans:bean>
+	<beans:bean class="com.goodee.market.Interceptor.MeetingBoardWriterCheckInterceptor" id="meetingBoardWriterCheckInterceptor"></beans:bean>
+	<beans:bean class="com.goodee.market.Interceptor.MeetingBoardDeleteInterceptor" id="meetingBoardDeleteInterceptor"></beans:bean>
 
 	<interceptors>
 		<interceptor>
@@ -39,6 +41,16 @@
 			<exclude-mapping path="/member/join"/>
 			<exclude-mapping path="/mb/list"/>
 			<beans:ref bean="MemberCheckInterceptor"/>
+		</interceptor>
+		
+		<interceptor>
+			<mapping path="/mb/update"/>
+			<beans:ref bean="meetingBoardWriterCheckInterceptor"/>
+		</interceptor>
+		
+		<interceptor>
+			<mapping path="/mb/delete"/>
+			<beans:ref bean="meetingBoardDeleteInterceptor"/>
 		</interceptor>
 		
 		<interceptor>
