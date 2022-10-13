@@ -1,6 +1,6 @@
 package com.goodee.market.util;
 
-public class Pager {
+public class MainPager {
 	
 		private Long page;
 		private Long startNum;
@@ -15,8 +15,8 @@ public class Pager {
 		private boolean next;
 		
 		
-		public Pager() {
-			this.perPage=6L;
+		public MainPager() {
+			this.perPage=4L;
 			this.perBlock=5L;
 		}
 		

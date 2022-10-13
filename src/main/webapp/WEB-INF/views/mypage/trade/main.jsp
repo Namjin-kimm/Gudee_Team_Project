@@ -91,8 +91,6 @@
 						                <tr>
 						                    <th class="mp-title">제목</th>
 						                    <th class="mp-title">가격</th>
-			                                <th class="mp-title">조회수</th>
-						                    <th class="mp-title">거래상태</th>
 						                </tr>
 						            </thead>
 						            <tbody class="mp-m-tbody">

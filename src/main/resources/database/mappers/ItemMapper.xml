@@ -69,6 +69,11 @@
     			SELECT COUNT(ITEMNUM) FROM ITEM
 		</select>
     		
+    	
+    	<select id="getMainCount" resultType="Long" parameterType="MainPager">
+    			SELECT COUNT(ITEMNUM) FROM ITEM
+		</select>	
+    		
 
 		<select id="getDetail" parameterType="ItemDTO" resultMap="getDetailResult">
 			 SELECT I.*,IM.*
