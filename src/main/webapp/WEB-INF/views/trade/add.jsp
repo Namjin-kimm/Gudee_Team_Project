@@ -29,8 +29,7 @@
 		
 
 			<div class="mb-3">
-				<label for="title" class="form-label">사용자번호</label>
-			  <input type="text" name="memberNum" class="form-control" id="num" >
+			  <input type="hidden" name="memberNum" class="form-control" id="num" >
 			</div>
 
 
@@ -53,7 +52,7 @@
 			
 			<div class="mb-3">
 			  <label for="category" class="form-label">카테고리</label>
-			  			  <input type="text" name="itemCategory" class="form-control" id="price" placeholder="가격 입력">
+			  			  <input type="text" name="itemCategory" class="form-control" id="price" placeholder="카테고리 입력">
 			  
 			<!-- 	<select name="itemCategory">
 				 <option name="itemCategory" value="num1">하</option>
