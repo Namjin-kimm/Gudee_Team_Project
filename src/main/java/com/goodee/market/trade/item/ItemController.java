@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.goodee.market.trade.review.ReviewDTO;
+import com.goodee.market.util.MainPager;
 import com.goodee.market.util.Pager;
 
 @Controller
@@ -36,12 +36,12 @@ public class ItemController{
 	
 	//메인페이지
 	@GetMapping(value = "main")
-	public ModelAndView getTradeMain( Pager pager)throws Exception {
+	public ModelAndView getTradeMain(MainPager mainPager)throws Exception {
 		System.out.println("중고 메인~.~");
 		ModelAndView mv = new ModelAndView();
-		List<ItemDTO> ar = itemService.getTradeMain(pager);
+		List<ItemDTO> ar = itemService.getTradeMain(mainPager);
 		mv.addObject("list", ar);	
-		mv.addObject("pager", pager);
+		mv.addObject("pager", mainPager);
 		mv.setViewName("trade/main");
 		return mv;
 	}

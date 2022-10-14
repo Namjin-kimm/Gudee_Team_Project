@@ -5,7 +5,7 @@
     <div class="container">
 		<nav class="navbar navbar-expand-lg header">
 			<div class="container">
-				<img src="/resources/images/stack-overflow.svg" alt="" id="mainLogo">
+				<img src="/resources/images/logo.png" alt="" id="mainLogo">
 			  <a class="navbar-brand" href="/">구디마켓</a>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>

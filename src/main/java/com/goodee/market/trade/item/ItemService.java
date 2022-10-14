@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.goodee.market.util.FileManager;
+import com.goodee.market.util.MainPager;
 import com.goodee.market.util.Pager;
 
 @Service
@@ -36,11 +37,11 @@ public class ItemService{
 		return result;	
 	}
 
-	public List<ItemDTO> getTradeMain(Pager pager)throws Exception{
-		Long totalCount=itemDAO.getCount(pager);
-		pager.getNum(totalCount);
-		pager.getRowNum();
-		return itemDAO.getTradeMain(pager);
+	public List<ItemDTO> getTradeMain(MainPager mainPager)throws Exception{
+		Long totalCount=itemDAO.getMainCount(mainPager);
+		mainPager.getNum(totalCount);
+		mainPager.getRowNum();
+		return itemDAO.getTradeMain(mainPager);
 	}
 	
 	

@@ -58,20 +58,6 @@
 									<li class="mp-li"><a href="/trade/reviewlist" class="mp-a">내가 작성한 후기</a></li>							
 								</ul>
 							</div>
-
-							<!-- 모임 -->
-							<div class="sidebar-mp">
-								<h4 class="sidebar-mp-title">모임🎠</h4>
-								<ul class="mp-ul">
-									<li class="mp-li"><a href="/trade/category" class="mp-a">의류</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">식품류</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">도서/문구</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">뷰티/미용</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">생활/디지털</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">반려동물 용품</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">가구/인테리어</a></li>							
-								</ul>
-							</div>
 						</div>                    
 					</div>
 					<!-- sidebar end -->
@@ -83,7 +69,7 @@
 						<div class="mp-main">
 							<div class="mp-m-main">
 								<h6 class="mp-m-title">내가 판매한 상품</h6>
-								<!-- <h6 class="mp-more-h"><a class="mp-more-a" href="sellitemlist">더보기</a></h6> -->
+								<h6 class="mp-more-h"><a class="mp-more-a" href="sellitemlist">더보기</a></h6>
 							</div>
 							<div class="mp-table">
 						        <table>
@@ -91,8 +77,6 @@
 						                <tr>
 						                    <th class="mp-title">제목</th>
 						                    <th class="mp-title">가격</th>
-			                                <th class="mp-title">조회수</th>
-						                    <th class="mp-title">거래상태</th>
 						                </tr>
 						            </thead>
 						            <tbody class="mp-m-tbody">
@@ -102,9 +86,15 @@
 								                <img src="/resources/images/trade/cart/cart-1.jpg" alt="" class="mp-img">
 								            	<h6><a href="../trade/detail?num=${sellItem.itemNum}" class="mp-imgtext">${sellItem.itemTitle}</a></h6>
 								            </td>
-								            <td>${sellItem.itemPrice}</td>
-								            <td>${sellItem.itemHit}</td>
-								            <td>${sellItem.itemStatus}</td>
+								            <td>
+								                ${sellItem.itemPrice}
+								            </td>
+								            <td class="mp-etctext">
+						                    	<a href="#" class="mp-etc">수정하기</a>
+								            </td>
+					                        <td class="mp-etctext">
+						                    	<a href="#" class="mp-etc">삭제하기</a>
+								            </td>
 								        </tr>  
 							        	</c:forEach>
 						            </tbody>

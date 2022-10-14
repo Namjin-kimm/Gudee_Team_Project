@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler;
 
 import com.goodee.market.trade.review.ReviewDTO;
+import com.goodee.market.util.MainPager;
 import com.goodee.market.util.Pager;
 
 
@@ -41,6 +42,11 @@ public class ItemDAO  {
 		return sqlSession.selectOne(NAMESPACE+"getCount", pager);
 	}
 	
+	public Long getMainCount(MainPager mainPager) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE+"getMainCount", mainPager);
+	}
+	
 	
 	public ItemDTO getDetail(ItemDTO itemDTO)throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"getDetail",itemDTO);
@@ -69,8 +75,8 @@ public class ItemDAO  {
 	}
 
 	
-	public List<ItemDTO> getTradeMain(Pager pager) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"getTradeMain", pager);
+	public List<ItemDTO> getTradeMain(MainPager mainPager) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getTradeMain", mainPager);
 	}
 
 	
