@@ -21,6 +21,7 @@
 
 <body>
 		<!-- The Modal -->
+	<form action=./category>	
 	<div class="modal" id="myModal">
 		<div class="modal-dialog modal-xl">
 			<div class="modal-content">
@@ -35,11 +36,12 @@
 				      <option class="select" id="contents" value="contents">내용</option> 
 				    </select>
 					<input type="text" name="search" class="form-control" id="search">
-					<button class="btn btn-outline-secondary" type="submit" id="button-addon2" data-bs-dismiss="modal">검색</button>
+					<button class="btn btn-outline-secondary" type="submit" id="button-addon2">검색</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	</form>
 		
 <header class="header">
 	<div class="header-up">
