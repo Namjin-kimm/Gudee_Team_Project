@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/resources/css/member/home.css">
 <c:import url="../template/meetingboard/bootstrapCss.jsp"></c:import>
 </head>
 <body>
