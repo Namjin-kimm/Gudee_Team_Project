@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>로그인🔐│구디마켓</title>
 <c:import url="../template/meetingboard/bootstrapCss.jsp"></c:import>
+<link rel="stylesheet" href="/resources/css/member/home.css">
 <link rel="stylesheet" href="/resources/css/member/login.css">
 
 <!-- Google Font -->
