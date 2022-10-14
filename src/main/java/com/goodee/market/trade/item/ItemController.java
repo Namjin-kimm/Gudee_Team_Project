@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.goodee.market.trade.review.ReviewDTO;
 import com.goodee.market.util.Pager;
 
 @Controller
@@ -22,6 +23,8 @@ public class ItemController{
 	
 	@Autowired
 	private ItemService itemService;
+	
+	
 	
 	@PostMapping("fileDelete")
 	@ResponseBody
@@ -126,12 +129,13 @@ public class ItemController{
 	//글삭제
 	@GetMapping("delete")
 	public String setDelete(Long num)throws Exception {
-	System.out.println("삭제 들어가");
 	ItemDTO itemDTO = new ItemDTO();
 	itemDTO.setItemNum(num);
 	int result= itemService.setDelete(itemDTO);
 	return "redirect:./main";
 	}
+	
+
 	
 	
 }

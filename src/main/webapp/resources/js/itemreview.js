@@ -15,7 +15,6 @@ rvsubmit.addEventListener("click", function(){
     let reviewNum = document.getElementById("reviewNum").value
     let id = document.getElementById("id").value
     let reviewContents = document.getElementById("reviewContents").value
-    let filNum = document.getElementById("data-file-num").value
     
 
     //xhttprequest
@@ -28,7 +27,7 @@ rvsubmit.addEventListener("click", function(){
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     
     //요청실행
-    xhttp.send("reviewNum="+reviewNum+"&id="+id+"&reviewContents="+reviewContents+"&fileNum="+fileNum)
+    xhttp.send("reviewNum="+reviewNum+"&id="+id+"&reviewContents="+reviewContents)
     
     // 응답처리 
     xhttp.onreadystatechange=function(){
