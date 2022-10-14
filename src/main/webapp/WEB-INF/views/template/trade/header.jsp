@@ -26,7 +26,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h6 class="modal-search">검색어를 입력하세요.</h6>
-				  	<button type="button" class="btn-close"></button>
+				  	<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
 				
 				<div class="modal-body">
@@ -133,10 +133,6 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a class="cate-a-c" href="/teamMember">MEMBER</a></li>
-						<li><hr class="dropdown-divider"></li>
-						<li><a class="cate-a-c" href="/workFlow">WORK FLOW</a></li>
-						<li class="cate-disabled">중고거래📦</li><br>
-						<li class="cate-disabled">모임🎈</li>
 						<li><hr class="dropdown-divider"></li>
 						<li><a class="cate-a-c" href="/erd">ERD</a></li>
 						<li class="cate-disabled">중고거래📦</li><br>
