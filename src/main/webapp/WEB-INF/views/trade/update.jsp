@@ -14,8 +14,28 @@
  <!-- include summernote css/js-->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-
 <c:import url="../template/trade/header.jsp"></c:import>
+ <!-- Google Font -->
+ <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    
+ <style>
+	 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+ </style>
+<style>
+.update{
+
+
+	position: relative;
+    /* overflow: hidden; */
+    padding-top: 190px;
+    line-height: 170%;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+</style>
+
+<div class="update">
+
+
 
 
 <section class="container-fluid col-lg-4">
@@ -24,11 +44,7 @@
 		<form action="./update" method="POST" enctype="multipart/form-data">
 		
 		
-		<div class="mb-3" >
-			<label for="num" class="form-label">사용자 번호</label>
-
-			  <input type="text"  name="memberNum" class="form-control" id="num" >
-			</div>
+	
 
 			<div class="mb-3">
 			  <label for="title" class="form-label">상품 이름</label>
@@ -82,7 +98,11 @@
 			</div>
 		</form>
 	</div>
+
+
 </section>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 	<c:import url="../template/trade/footer.jsp"></c:import>

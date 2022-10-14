@@ -43,10 +43,16 @@
                     <input type="text" name="id" class="form-control" id="id">
                   </div>
           
-                  <div class="mb-3">
-                    <label for="reviewContents" class="form-label">contents</label>
-                    <textarea  name="reviewContents" class="form-control" id="reviewContents"></textarea>
+         			 <div class="mb-3">
+                    <label for="reviewScore" class="form-label">별점</label>
+                    <input type="text" name="reviewStar" class="form-control" id="reviewScore">
                   </div>
+                  
+                  <div class="mb-3">
+                    <label for="contents" class="form-label">contents</label>
+                    <textarea  name="reviewContents" class="form-control" id="contents"></textarea>
+                  </div>
+                  
    
                     <div id="addFiles">
                         <button type="button" class="btn btn-danger" id="fileAdd">추가</button>
@@ -115,22 +121,19 @@
                     <span class="itdes">#남녀노소 #모두가 좋아하는 #건강 간식 </span>
         
 
-                            <div class="btn_wrap">
-                                <ul>
-                                     <li>
-                                        <div class="review_req">
+                            
+                                 <span class="review_tit"> 상품 정보</span>
                 
-                                       <span class="text">상품 정보 </span>
-                                        ${dto.itemContents}
+                                        <div class="campain_wrap">
+                                            <p>		</p>
+                                            ${dto.itemContents}
+
+                                
+                                <p>
+                                </p>	
+                            	  </div>
                                         
                                         
-                                            </div>
-                                      </div>
-                                        
-                                    </li>
-                                    
-                                </ul>
-                            </div>
 
 
                     <div class="review_wrap">
@@ -190,58 +193,6 @@
                 <div style="clear:both;"></div>
                 </div>
             </div>
-    
-        
-        <!-- item_detail -->
-        <div class="item_detail">
-            <ul class="teb_menu">
-                <li class=""><a href="#tab1">답글</a></li>
-                <li class="active"><a href="#tab2">이전 상품 정보</a></li>	</ul>
-            <hr class="teb_line">
-            
-            <div id="tab2" class="tab-cont" style="display: block;">
-                
-        <div class="cpa">
-           
-
-            <ul>
-                        <li>
-                                                          
-                              <c:forEach items="${dto.itemImageDTOs}" var="itemimage">          
-                    <img src="/resources/upload/item/${itemimage.fileName}" class="avatar" style="background-color: transparent; opacity: 1; transition: opacity 0.1s;">
-                </c:forEach>        
-
-
-                            <a href="./detail?num=${dto.itemNum}">
-                                <strong>${dto.itemTitle}</strong>
-                                <p>${dto.itemPrice}</p> </a>
-        
-                </li>
-                       
-                    </ul>
-
-
-        </div>
-      
-        </div>
-
-        
-        
-        <div id="left_banner_top" style="display:none;">
-        
-            <ul>
-             
-            </ul>
-        
-        </div>
-        
-        <div id="left_banner">
-        
-            <ul>
-             
-            </ul>
-        
-        </div>
     
        
 

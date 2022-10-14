@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler;
 
+import com.goodee.market.trade.review.ReviewDTO;
 import com.goodee.market.util.MainPager;
 import com.goodee.market.util.Pager;
 
@@ -20,6 +21,8 @@ public class ItemDAO  {
 	@Autowired
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.goodee.market.trade.item.ItemDAO.";
+	
+	
 	
 	  // fileDetail
 		public ItemImageDTO getFileDetail(ItemImageDTO itemImageDTO)throws Exception{

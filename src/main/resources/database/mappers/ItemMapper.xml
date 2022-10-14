@@ -5,6 +5,12 @@
     <mapper namespace="com.goodee.market.trade.item.ItemDAO">
     
     
+
+    <insert id="setItemReview" parameterType="ReviewDTO">
+    INSERT INTO REVIEW (REVIEWNUM, ITEMNUM, MEMBERNUM,  REVIEWTITLE, REVIEWCONTENT, REVIEWHIT, REVIEWSTAR)
+	VALUES(REVIEW_SEQ.NEXTVAL, #{itemNum}, #{memberNum}, #{reviewTitle},#{reviewContent},0, #{reviewStar});
+    </insert>
+
 <!--     <sql id="search">
 		WHERE
 			<choose>
@@ -13,6 +19,7 @@
 			</choose>
 		LIKE '%'||#{search}||'%'
 	</sql> -->
+
     
     
     

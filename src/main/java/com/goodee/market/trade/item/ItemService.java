@@ -24,6 +24,7 @@ public class ItemService{
 	@Autowired
 	private FileManager fileManager;
 	
+
 	
 	public int setFileDelete(ItemImageDTO itemImageDTO, ServletContext servletContext)throws Exception{
 		 itemImageDTO = itemDAO.getFileDetail(itemImageDTO);

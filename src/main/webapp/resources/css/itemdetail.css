@@ -254,7 +254,7 @@ li {
       .btn01{display:inline-block;padding:0px 10px; color:#FFFFFF; border: solid 1px #515b6b; background-color:#515b6b;  line-height:33px;  border-radius:3px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
       .btn01:hover{color:#FFFFFF;}
       
-      .box_tbl{width:100%; border:solid 1px #DCDCDC; background-color:#FFFFFF;}
+      .box_tbl{width: 50px;%; border:solid 1px #DCDCDC; background-color:#FFFFFF;}
       .box_tbl th {font-weight:bold;color:#666; padding:15px 15px; background-color:#f4f4f4; border-right:solid 1px #DCDCDC; border-bottom:solid 1px #DCDCDC;}
       .box_tbl td {color:#666; padding:15px 15px; border-right:solid 1px #DCDCDC; border-bottom:solid 1px #DCDCDC; line-height:20px;} 
       
