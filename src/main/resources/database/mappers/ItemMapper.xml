@@ -67,7 +67,7 @@
             	MEMBER M
             ON M.MEMBERNUM= IM.MEMBERNUM
             
-            WHERE M.MEMBERNUM=#{memberNum}		 	
+            WHERE M.MEMBERNUM=3	 	
 		</select>
 
 
