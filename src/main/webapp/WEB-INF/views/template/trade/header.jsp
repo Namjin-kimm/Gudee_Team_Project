@@ -26,7 +26,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h6 class="modal-search">검색어를 입력하세요.</h6>
-				  	<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				  	<button type="button" class="btn-close"></button>
 				</div>
 				
 				<div class="modal-body">
@@ -35,7 +35,7 @@
 				      <option class="select" id="contents" value="contents">내용</option> 
 				    </select>
 					<input type="text" name="search" class="form-control" id="search">
-					<button class="btn btn-outline-secondary" type="submit" id="button-addon2">검색</button>
+					<button class="btn btn-outline-secondary" type="submit" id="button-addon2" data-bs-dismiss="modal">검색</button>
 				</div>
 			</div>
 		</div>

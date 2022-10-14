@@ -1,20 +1,29 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
+
 <html>
 <head>
-<meta charset="UTF-8">
-<title> 상품페이지 </title>
-<!--summernote jquery  -->
- <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
- <!-- bootStrap -->	
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
- <c:import url="../template/trade/header.jsp"></c:import>
- <link rel="stylesheet" href="../../../resources/css/itemdetail.css">
- 
-
+    <meta charset="UTF-8">
+    <title> 상품페이지 </title>
+    
+    <!--summernote jquery  -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- bootStrap -->	
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+    </style>
+    
+    <c:import url="../template/trade/header.jsp"></c:import>
+    <link rel="stylesheet" href="/resources/css/trade/header.css" />
+    <link rel="stylesheet" href="/resources/css/trade/footer.css" />
+    <link rel="stylesheet" href="/resources/css/trade/itemdetail.css" />
 
 </head>
 <body>
@@ -41,17 +50,11 @@
    
                     <div id="addFiles">
                         <button type="button" class="btn btn-danger" id="fileAdd">추가</button>
+                    </div>
                 
-                        </div>
-                
-                 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>                  
                   <button type="button" id="rvsubmit" class="btn btn-secondary"  data-bs-dismiss="modal" >전송</button>
-                  
-                  
-                  
-                  
                 </div>
               </div>
             </div>
@@ -59,35 +62,48 @@
         </div>  
 
         
-        <!-- wrap -->
-        <div id="wrap">
-        
-        <div class="top_menu">
-                <div class="layout_inner">
-                    <div class="right_menu">
-                        <span class="line"></span>
-                        
-                        
-            <!-- header -->
-            <div id="header">
+<!-- wrap -->
+<div class="detailBody">
+    <section class="detail-top">
+        <div class="detail-container">
+            <div class="detail-row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="detail-pic">
+                        <div class="detail-pic-div">
+                            <img id="detail-item-img" src="/resources/upload/item/${fileDTO.fileName}">
+                        </div>
+                    </div>
+                    <div class="product__details__pic__slider owl-carousel owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-822px, 0px, 0px); transition: all 1.2s ease 0s; width: 1410px;">
+                                <div class="owl-item cloned" style="width: 97.5px; margin-right: 20px;">
+                                    <img data-imgbigurl="img/product/details/product-details-2.jpg" src="img/product/details/thumb-1.jpg" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev">
+                            <span aria-label="Previous">‹</span>
+                        </button>
+                        <button type="button" role="presentation" class="owl-next">
+                            <span aria-label="Next">›</span>
+                        </button>
+                    </div>
+                    <div class="owl-dots disabled">
+                        <button role="button" class="owl-dot active">
+                            <span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
 
-        <!-- 리뷰어신청하기 -->
-       
-        <div class="sub_container">
-            <div class="sub_item_wrap">
-                         
 
-                <div class="item_thum">
-
-                 <img id="it_img_m" src="/resources/upload/item/${fileDTO.fileName}">
-                    
-                    <ul class="it_img_thumb">
- 
-                                    
-                    <c:forEach items="${dto.itemImageDTOs}" var="fileDTO">
-                      <li><img src="/resources/upload/item/${fileDTO.fileName}" class="it_img_s it_img_s_on"></li>
-					</c:forEach>
-                                    
+                    <ul class="it_img_thumb">                 
+                        <c:forEach items="${dto.itemImageDTOs}" var="fileDTO">
+                            <li>
+                                <img src="/resources/upload/item/${fileDTO.fileName}" class="it_img_s it_img_s_on">
+                            </li>
+					    </c:forEach>         
                     </ul>
 	           
                 </div>

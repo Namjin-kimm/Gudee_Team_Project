@@ -8,9 +8,18 @@
 <title>로그인🔐│구디마켓</title>
 <c:import url="../template/meetingboard/bootstrapCss.jsp"></c:import>
 <link rel="stylesheet" href="/resources/css/member/login.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+</style>
+
 </head>
 <body>
 	<c:import url="../template/member/memberHeader.jsp"></c:import>
+	
 	<div style="background-color: #FBF7F2; height: 47rem;">
 		<div class="container loginTop">
 			<form action="./login" method="post">
