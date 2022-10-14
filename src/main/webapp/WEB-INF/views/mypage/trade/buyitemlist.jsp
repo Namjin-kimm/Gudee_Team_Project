@@ -58,20 +58,6 @@
 									<li class="mp-li"><a href="/trade/reviewlist" class="mp-a">내가 작성한 후기</a></li>							
 								</ul>
 							</div>
-
-							<!-- 모임 -->
-							<div class="sidebar-mp">
-								<h4 class="sidebar-mp-title">모임🎠</h4>
-								<ul class="mp-ul">
-									<li class="mp-li"><a href="/trade/category" class="mp-a">의류</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">식품류</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">도서/문구</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">뷰티/미용</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">생활/디지털</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">반려동물 용품</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">가구/인테리어</a></li>							
-								</ul>
-							</div>
 						</div>                    
 					</div>
 					<!-- sidebar end -->
@@ -84,7 +70,7 @@
 						<div class="mp-main">
 							<div class="mp-m-main">
 								<h6 class="mp-m-title">내가 구매한 상품</h6>
-								<!-- <h6 class="mp-more-h"><a class="mp-more-a" href="buyitemlist">더보기</a></h6> -->
+								<h6 class="mp-more-h"><a class="mp-more-a" href="buyitemlist">더보기</a></h6>
 							</div>
 							<div class="mp-table">
 					            <table>
@@ -107,7 +93,7 @@
 								                ${buyItem.itemPrice}
 				                            </td>
 											<td>
-							                    ${buyItem.memberNum}
+							                    ${buyItem.nickName}
 				                            </td>
 							                <td class="mp-etctext">
 						 	                   <a href="#" class="mp-etc">리뷰작성</a>
@@ -120,6 +106,7 @@
 						</div>
 					</div>			
 				</div>
+			</div>	
 		</section>
 	</div>
 

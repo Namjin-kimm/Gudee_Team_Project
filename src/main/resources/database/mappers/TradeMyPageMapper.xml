@@ -7,9 +7,16 @@
 
 	<!-- 판매리스트 -->
 	<select id="getSellItemList" resultType="ItemDTO" parameterType="ItemDTO">	
-		SELECT * FROM ITEM
-		    WHERE ITEMNUM
-		        =(SELECT ITEMNUM FROM SELLITEMLIST WHERE MEMBERNUM = 3)
+		SELECT I.ITEMTITLE, I.ITEMPRICE, M.MEMBERNICKNAME
+		FROM ITEM I
+             INNER JOIN
+             ITEMLIKE_MEMBER IM
+             ON I.ITEMNUM= IM.ITEMNUM
+             
+             INNER JOIN
+             MEMBER M
+             ON M.MEMBERNUM= IM.MEMBERNUM
+             WHERE M.MEMBERNUM=#{memberNum};
 	</select>
 	
 	
@@ -17,14 +24,14 @@
 	<select id="getBuyItemList" resultType="ItemDTO" parameterType="BuyerDTO">
 		SELECT * FROM ITEM
 		    WHERE ITEMNUM
-		        =(SELECT ITEMNUM FROM BUYITEMLIST WHERE REALBUYER = 4)
+		        =(SELECT ITEMNUM FROM BUYITEMLIST WHERE MEMBERNUM=#{memberNum})
 	</select>
 	
 	
 	<!-- 후기리스트 -->
 	<select id="getReviewList" resultType="ReviewDTO" parameterType="ReviewDTO">
 		SELECT * FROM REVIEW
-			WHERE REALBUYER = 4
+			WHERE MEMBERNUM = #{memberNum}
 	</select>
 	
 </mapper>	

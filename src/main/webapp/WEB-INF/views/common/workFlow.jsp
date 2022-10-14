@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,24 +22,64 @@
     
   	<link rel="stylesheet" href="/resources/css/trade/header.css" />
     <link rel="stylesheet" href="/resources/css/trade/footer.css" />
-    <link rel="stylesheet" href="/resources/css/trade/erd.css" />
+    <link rel="stylesheet" href="/resources/css/common.css" />
 
 </head>
+
+<c:import url="../template/trade/header.jsp"></c:import>
+
 <body>
 
-<div class="erdBody">
-	<div class="erdTop">
-		<div class="erdTrade">
-			<img alt="" src="">
-		</div>
-		
-		<div class="erdMeeting">
-			<img alt="" src="">
-		</div>
-	</div>
-</div>		
+	<div class="erdBody">
+		<section class="erdTop">
+			<div class="erdContainer">
+				<div class="erdRow">
+					<div class="erdlogo">
+						<img alt="" src="/resources/images/logo.png" class="erdlogoimg">
+					</div>
+					
+					<div class="erdair"></div>
+					<!-- 전체 ERD -->
+					<div class="erd-row-con">
+						<h5 class="erdtitle">구디 마켓 │ 전체 WORK FLOW</h5>
+						<img alt="" src="/resources/images/Goodee_Market_Project.png" class="erd-img">
+					</div>
 			
-
+	
+					<div class="erdair"></div>
+					<!-- TRADE ERD -->
+					<div class="erd-row-con">
+						<div class="erdcon">
+							<h5 class="erdtitle">구디 마켓 │ 중고거래📦 WORK FLOW</h5>
+							<img alt="" src="/resources/images/Goodee_Market_Project_trade.png" class="erd-img">
+						</div>
+						
+						<div class="erd-tec">
+							<h6> 기능 설명 와아ㅏ아아아ㅏ아아아ㅏㅏ아ㅏ아아아ㅏ아아아앙 </h6>
+							<h6>또설명~~~~~~</h6>
+						</div>
+					</div>
+					
+					
+					<div class="erdair"></div>
+					<!-- Meeting ERD -->
+					<div class="erd-row-con">
+						<div class="erdcon">
+							<h5 class="erdtitle">구디 마켓 │ 모임👥 WORK FLOW</h5>
+							<img alt="" src="/resources/images/Goodee_Market_Project_meeting.png" class="erd-img">
+						</div>
+						
+						<div class="erd-tec">
+							<h6> 기능 설명 와아ㅏ아아아ㅏ아아아ㅏㅏ아ㅏ아아아ㅏ아아아앙 </h6>
+							<h6>또설명~~~~~~</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>		
+				
 	<c:import url="../template/trade/footer.jsp"></c:import>
-</body>
-</html>
+	
+	</body>
+	</html>
