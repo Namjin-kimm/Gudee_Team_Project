@@ -53,36 +53,6 @@
 	                            <li class="scate-li"><a href="#" class="scate-a">가구/인테리어</a></li>							
                             </ul>
                         </div>
-
-                        <div class="sidebar-cate">
-                            <h4 class="sidebar-cate-title">가격</h4>
-                            <div class="price-check">
-                            	<div class="price-text">
-	                            	<input type="radio" name="form-check-input" value="allprice" class="price-text" checked>
-                                    <h6 class="price-text">전체 가격</h6><br>
-	                        	</div>
-	                        	<div class="price-text">
-	                        		<input type="radio" name="form-check-input" value="1" class="price-text">
-                                    <h6 class="price-text">1만원 이하</h6><br>
-	                        	</div>
-	                        	<div class="price-text">
-	                        		<input type="radio" name="form-check-input" value="3" class="price-text">
-                                    <h6 class="price-text">3만원 이하</h6><br>
-	                        	</div>
-	                        	<div class="price-text">	
-	                        		<input type="radio" name="form-check-input" value="5" class="price-text">
-                                    <h6 class="price-text">5만원 이하</h6><br>
-	                        	</div>
-	                        	<div class="price-text">
-	                        		<input type="radio" name="form-check-input" value="7" class="price-text">
-                                    <h6 class="price-text">7만원 이하</h6><br>
-	                        	</div>
-	                        	<div class="price-text">
-	                        		<input type="radio" name="form-check-input" value="10" class="price-text">
-                                    <h6 class="price-text">10만원 이하</h6>                  	
-                            	</div>
-                            </div>
-                        </div>
                     </div>                    
                 </div>
                 
@@ -92,12 +62,11 @@
                 	<!-- 정렬 -->
                     <div class="filter-item">
                         <div class="sort-row">
-                            <div class="filter-sort">
-                                <ul>
-                                    <li class="filter-li"><a href="/trade/category/new" class="filter-a">최신순</a></li>
-                                    <li class="filter-li"><a href="/trade/category/hit" class="filter-a">조회순</a></li>
-                                    <li class="filter-li"><a href="/trade/category/high" class="filter-a">높은 가격순</a></li>
-                                    <li class="filter-li"><a href="/trade/category/low" class="filter-a">낮은 가격순</a></li>
+                            <div class="filter-sort">                           
+                                <ul id="filter" name="filter">
+                                    <li class="filter-li" value="recent"><a href="/trade/category" class="filter-a">최신순</a></li>
+                                    <li class="filter-li"><a href="/trade/category" class="filter-a">높은 가격순</a></li>
+                                    <li class="filter-li"><a href="/trade/category" class="filter-a">낮은 가격순</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -111,7 +80,7 @@
                             <div class="product-item">
                                 <div class="featured-item-pic">
                                 	<c:forEach items="${item.itemImageDTOs}" var="fileDTO">
-                                		<img alt="" src="../resources/upload/trade/${fileDTO.fileName}">
+                                		<img alt="" src="../resources/upload/item/${fileDTO.fileName}">
                                 	</c:forEach>
                                 </div>
 
@@ -132,18 +101,21 @@
                                 <div class="cate-page">
                                     <nav aria-label="Page navigation category">
                                         <ul class="pagination">
-                                        <c:if test="${pager.pre}">
-                                            <li class="page-item">
-                                                <a class="page-link" href="./category?page=${pager.startNum-1}" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                </a>
-                                            </li>
-                                            </c:if>
+	                                        <li class="page-item ${pager.pre ? '' : 'disabled' }">
+										  		<a class="page-link" href="./list?page=${pager.startNum - 1 }&filter=${pager.filter}&search=${pager.search}" aria-label="Previous">
+												   <span aria-hidden="true">&laquo;</span>
+												</a>
+										  	</li>
                                             <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
                                                 <li class="page-item">
-                                                    <a class="page-link" href="./category?page=${i}">${i}</a>
+                                                    <a class="page-link" href="./category?page=${i}&filter=${pager.filter}&search=${pager.search}">${i}</a>
                                                 </li>
                                             </c:forEach>
+                                            <li class="page-item ${pager.next ? '' : 'disabled' }">
+											   <a class="page-link" href="./category?page=${pager.lastNum + 1 }&filter=${pager.filter}&search=${pager.search}" aria-label="Next">
+											      <span aria-hidden="true">&raquo;</span>
+											   </a>
+											</li>
                                         </ul>
                                     </nav>
                                 </div>

@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title> 상품 추가 </title>
+<title>판매글 등록➕│구디마켓│중고거래📦</title>
 
 <!--summernote jquery  -->
  <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -18,67 +18,85 @@
  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
  
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+</style>
+
+  <link rel="stylesheet" href="/resources/css/trade/header.css" />
+<link rel="stylesheet" href="/resources/css/trade/footer.css" />
+<link rel="stylesheet" href="/resources/css/trade/add.css" />
+
 </head>
 <body>
 
-<h1 class="align-center"> Add Page</h1>
-<section class="container-fluid col-lg-4">
-	
-	<div class="row">
-		<form action="./add" method="POST" enctype="multipart/form-data">
-		
+<c:import url="../template/trade/header.jsp"></c:import>
 
-			<div class="mb-3">
-			  <input type="hidden" name="memberNum" class="form-control" id="num" >
+<div class="addBody">
+	<section class="add-top">
+		<div class="add-container">
+			<div class="add-row">
+				<form action="./add" method="POST" enctype="multipart/form-data">
+
+					<h4 class="add-title">판매글 등록하기➕</h4>
+
+					<div class="add-air"></div>
+
+					<div class="mb-3">
+						<label for="title" class="form-label">사용자 번호를 입력하세요.</label>
+					<input type="text" name="memberNum" class="form-control" id="num" >
+					</div>
+
+					
+					<div class="mb-3">
+					<label for="category" class="form-label">카테고리</label>
+								<input type="text" name="itemCategory" class="form-control" id="category" placeholder="카테고리를 입력하세요.">
+					</div>
+					<!-- 	<select name="itemCategory">
+						<option name="itemCategory" value="num1">하</option>
+						<option name="itemCategory" value="num2">하하</option>
+						<option name="itemCategory" value="num3">하하하</option>
+						<option name="itemCategory" value="num4">하하하하</option>
+						<option name="itemCategory" value="num5">하하하하하하</option>
+						</select>
+					</div>  -->	
+
+					<div class="mb-3">
+						<label for="title" class="form-label">제목을 입력하세요.</label>
+						<input type="text" name="itemTitle" class="form-control" id="title" placeholder="">
+					</div>
+					
+					<div class="mb-3">
+						<label for="price" class="form-label">가격을 입력하세요.</label>
+						<input type="text" name="itemPrice" class="form-control" id="price" placeholder="">
+					</div>
+					
+					<div class="add-air"></div>
+
+					<div id="addFiles">
+						<h6>상품을 설명할 상세 사진을 첨부해 주세요.</h6>	
+						<button type="button" class="add-btn" id="fileAdd">사진 추가</button>
+					</div>
+						
+					<div class="add-air"></div>
+					
+					<div class="mb-3">
+						<label for="contents" class="form-label">상품 설명을 작성해 주세요.</label>
+						<textarea class="form-control" name="itemContents" id="contents" rows="3"></textarea>
+					</div>
+
+					<div class="mb-3">
+						<button type="submit" class="add-btn">판매글 등록</button>
+					</div>
+
+				</form>
 			</div>
-
-
-			<div class="mb-3">
-			  <label for="title" class="form-label">상품 이름</label>
-			  <input type="text" name="itemTitle" class="form-control" id="title" placeholder="제목 입력">
-			</div>
-			
-			
-			 <div id="addFiles">
-			<button type="button" class="btn btn-danger" id="fileAdd">추가</button>
-	
-			</div>
-				
-
-			<div class="mb-3">
-			  <label for="price" class="form-label">가격</label>
-			  <input type="text" name="itemPrice" class="form-control" id="price" placeholder="가격 입력">
-			</div>
-			
-			<div class="mb-3">
-			  <label for="category" class="form-label">카테고리</label>
-			  			  <input type="text" name="itemCategory" class="form-control" id="price" placeholder="카테고리 입력">
-			  
-			<!-- 	<select name="itemCategory">
-				 <option name="itemCategory" value="num1">하</option>
-				 <option name="itemCategory" value="num2">하하</option>
-				 <option name="itemCategory" value="num3">하하하</option>
-				 <option name="itemCategory" value="num4">하하하하</option>
-				 <option name="itemCategory" value="num5">하하하하하하</option>
-				</select>
-			</div>  -->	
-			
-			<div class="mb-3">
-			  <label for="contents" class="form-label">상품 정보</label>
-			  <textarea class="form-control" name="itemContents" id="contents" rows="3"></textarea>
-			</div>
-
-			
-			<br><br><br>
-
-			
-			<div class="mb-3">
-				<button type="submit" class="btn btn-success">등록</button>
-			</div>
-
-		</form>
-	</div>
-</section>
+		</div>	
+	</section>
+</div>
 
 <!-- bootStrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

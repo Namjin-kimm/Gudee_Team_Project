@@ -5,6 +5,16 @@
     <mapper namespace="com.goodee.market.trade.item.ItemDAO">
     
     
+<!--     <sql id="search">
+		WHERE
+			<choose>
+				<when test="select == 'title'">ITEMTITLE</when>
+				<otherwise>ITEMCONTENT</otherwise>
+			</choose>
+		LIKE '%'||#{search}||'%'
+	</sql> -->
+    
+    
     
 	<select id="getFileDetail" resultType="ItemImageDTO" parameterType="ItemImageDTO">
 		SELECT * FROM ITEMIMAGE WHERE FILENUM=#{fileNum}
@@ -32,16 +42,17 @@
     	</select>
     
     	<!-- 카테고리 메인 -->
-		<select id="getList" resultType="itemDTO" parameterType="Pager">
+ 		<select id="getList" resultType="itemDTO" parameterType="Pager">
 		 	SELECT * FROM
 		    (
 		        SELECT ROWNUM R, I.* FROM
 		            (SELECT * FROM ITEM 
-		            
+		            	<!-- <include refid="search"></include> -->
 		             ORDER BY ITEMNUM DESC) I
 		    )
 			WHERE R BETWEEN #{startRow} and #{lastRow}		 	
 		</select>
+		
 
 		<!-- 찜 목록 -->
 		<select id="getHeartList" resultType="itemDTO" parameterType="itemDTO">
@@ -56,7 +67,7 @@
             	MEMBER M
             ON M.MEMBERNUM= IM.MEMBERNUM
             
-            WHERE M.MEMBERNUM=#{memberNum}		 	
+            WHERE M.MEMBERNUM=3	 	
 		</select>
 
 
@@ -68,6 +79,11 @@
     	<select id="getCount" resultType="Long" parameterType="Pager">
     			SELECT COUNT(ITEMNUM) FROM ITEM
 		</select>
+    		
+    	
+    	<select id="getMainCount" resultType="Long" parameterType="MainPager">
+    			SELECT COUNT(ITEMNUM) FROM ITEM
+		</select>	
     		
 
 		<select id="getDetail" parameterType="ItemDTO" resultMap="getDetailResult">

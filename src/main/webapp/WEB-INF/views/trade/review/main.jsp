@@ -53,46 +53,6 @@
 	                            <li class="scate-li"><a href="#" class="scate-a">가구/인테리어</a></li>							
                             </ul>
                         </div>
-
-                        <div class="sidebar-cate">
-                            <h4 class="sidebar-cate-title">별점</h4>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" value="option1" checked>
-                              <label class="form-check-label" for="flexRadioDefault2">
-                                전체 별점
-                              </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" value="option2">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                  ⭐
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" value="option3">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                  ⭐⭐
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" value="option4">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                  ⭐⭐⭐
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" value="option5">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                  ⭐⭐⭐⭐
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" value="option6">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                  ⭐⭐⭐⭐⭐
-                                </label>
-                            </div>
-                        </div>
                     </div>                    
                 </div>
                 
@@ -105,7 +65,6 @@
                             <div class="filter-sort">
                                 <ul>
                                     <li class="filter-li"><a href="/trade/category/new" class="filter-a">최신순</a></li>
-                                    <li class="filter-li"><a href="/trade/category/hit" class="filter-a">조회순</a></li>
                                     <li class="filter-li"><a href="/trade/category/high" class="filter-a">높은 별점순</a></li>
                                     <li class="filter-li"><a href="/trade/category/low" class="filter-a">낮은 별점순</a></li>
                                 </ul>
@@ -123,7 +82,15 @@
                                 </div>
                                 <div class="featured-item-text">
                                     <h6><a href="..trade/review/detail?num=${rv.reviewNum}" class="item-name">${rv.reviewTitle}</a></h6>
-                                    <h5>${rv.reviewStar}</h5>
+                                    <h5>
+	                                    <c:choose>
+							                <c:when test="${rv.reviewStar eq 1}">⭐</c:when>
+							                <c:when test="${rv.reviewStar eq 2}">⭐⭐</c:when>
+							                <c:when test="${rv.reviewStar eq 3}">⭐⭐⭐</c:when>
+							                <c:when test="${rv.reviewStar eq 4}">⭐⭐⭐⭐</c:when>
+							                <c:otherwise>⭐⭐⭐⭐⭐</c:otherwise>
+						                </c:choose>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
