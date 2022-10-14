@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler;
 
+import com.goodee.market.util.MainPager;
 import com.goodee.market.util.Pager;
 
 
@@ -36,6 +37,11 @@ public class ItemDAO  {
 	public Long getCount(Pager pager) throws Exception {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(NAMESPACE+"getCount", pager);
+	}
+	
+	public Long getMainCount(MainPager mainPager) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE+"getMainCount", mainPager);
 	}
 	
 	
@@ -66,8 +72,8 @@ public class ItemDAO  {
 	}
 
 	
-	public List<ItemDTO> getTradeMain(Pager pager) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"getTradeMain", pager);
+	public List<ItemDTO> getTradeMain(MainPager mainPager) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getTradeMain", mainPager);
 	}
 
 	

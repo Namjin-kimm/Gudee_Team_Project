@@ -58,20 +58,6 @@
 									<li class="mp-li"><a href="/trade/reviewlist" class="mp-a">내가 작성한 후기</a></li>							
 								</ul>
 							</div>
-
-							<!-- 모임 -->
-							<div class="sidebar-mp">
-								<h4 class="sidebar-mp-title">모임🎠</h4>
-								<ul class="mp-ul">
-									<li class="mp-li"><a href="/trade/category" class="mp-a">의류</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">식품류</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">도서/문구</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">뷰티/미용</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">생활/디지털</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">반려동물 용품</a></li>
-									<li class="mp-li"><a href="#" class="mp-a">가구/인테리어</a></li>							
-								</ul>
-							</div>
 						</div>                    
 					</div>
 					<!-- sidebar end -->
@@ -91,7 +77,7 @@
 				                        <tr>
 						                    <th class="mp-title">제목</th>
 						                    <th class="mp-title">별점</th>
-			                                <th class="mp-title">조회수</th>			                                    
+			                                <th></th>			                                    
 											<th></th>
 						                </tr>
 						            </thead>
@@ -103,13 +89,19 @@
 								                    <h6><a href="../trade/detail?num=${review.reviewNum}" class="mp-imgtext">${reviewItem.reviewTitle}</a></h6>
 					                            </td>
 				                                <td>
-								                    ${reviewItem.reviewStar}
+				                                    <c:choose>
+										                <c:when test="${reviewItem.reviewStar eq 1}">⭐</c:when>
+										                <c:when test="${reviewItem.reviewStar eq 2}">⭐⭐</c:when>
+										                <c:when test="${reviewItem.reviewStar eq 3}">⭐⭐⭐</c:when>
+										                <c:when test="${reviewItem.reviewStar eq 4}">⭐⭐⭐⭐</c:when>
+										                <c:otherwise>⭐⭐⭐⭐⭐</c:otherwise>
+									                </c:choose>
 								                </td>
-					                            <td>
-					                                ${reviewItem.reviewHit}
+								                <td class="mp-etctext">
+						                            <a href="#" class="mp-etc">수정하기</a>
 								                </td>
 					                            <td class="mp-etctext">
-						                            <a href="#" class="mp-etc">수정하기</a>
+						                            <a href="#" class="mp-etc">삭제하기</a>
 								                </td>
 						                    </tr>  
 							            </c:forEach>
